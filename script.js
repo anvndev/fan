@@ -19,27 +19,8 @@
         }
         return null
     }
-    function Snowflake(b, a, d, e, c) {
-        this.element = b;
-        this.radius = a;
-        this.speed = d;
-        this.xPos = e;
-        this.yPos = c;
-        this.counter = 0;
-        this.sign = Math.random() < 0.5 ? 1 : -1;
-        this.element.style.opacity = 0.5 + Math.random();
-        this.element.style.fontSize = 4 + Math.random() * 30 + "px"
-    }
-    Snowflake.prototype.update = function() {
-        this.counter += this.speed / 5000;
-        this.xPos += this.sign * this.speed * Math.cos(this.counter) / 40;
-        this.yPos += Math.sin(this.counter) / 40 + this.speed / 30;
-        setTranslate3DTransform(this.element, Math.round(this.xPos), Math.round(this.yPos));
-        if (this.yPos > browserHeight) {
-            this.yPos = -1000
-        }
-    }
-    ;
+
+
     function setTranslate3DTransform(a, c, b) {
         var d = "translate3d(" + c + "px, " + b + "px, 0)";
         a.style[transformProperty] = d
