@@ -62,28 +62,5 @@
         h.removeChild(b);
         moveSnowflakes()
     }
-    function moveSnowflakes() {
-        for (var b = 0; b < snowflakes.length; b++) {
-            var a = snowflakes[b];
-            a.update()
-        }
-        if (resetPosition) {
-            browserWidth = document.documentElement.clientWidth;
-            browserHeight = document.documentElement.clientHeight;
-            for (var b = 0; b < snowflakes.length; b++) {
-                var a = snowflakes[b];
-                a.xPos = getPosition(50, browserWidth);
-                a.yPos = getPosition(50, browserHeight)
-            }
-            resetPosition = false
-        }
-        requestAnimationFrame(moveSnowflakes)
-    }
-    function getPosition(b, a) {
-        return Math.round(-1 * b + Math.random() * (a + 2 * b))
-    }
-    function setResetFlag(a) {
-        resetPosition = true
-    }
-    ;
+    
     
